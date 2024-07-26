@@ -5,8 +5,6 @@ import 'dotenv/config';
 const app = express();
 app.use(express.json());
 app.use(cors());
-const a = 5;
-a = 'asds';
 
 app.get('/', (_, res) => {
     return res.json({ msg: 'Hello World!' }).status(200);
