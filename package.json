@@ -9,7 +9,7 @@
         "format:write": "bun format --write",
         "build": "bun nx run-many -t build",
         "lint": "bun nx run-many -t lint",
-        "validate": "bun run format:write && bun run lint && bun run build && cd libs/db/;bun run prisma generate",
+        "validate": "bun run format:write && bun run lint && bun run build && cd libs/db/ && bun run prisma generate",
         "prepare": "husky"
     },
     "devDependencies": {
