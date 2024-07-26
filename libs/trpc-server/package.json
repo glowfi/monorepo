@@ -3,13 +3,15 @@
     "module": "index.ts",
     "type": "module",
     "devDependencies": {
-        "@types/bun": "latest"
+        "@types/bun": "latest",
+        "@types/jsonwebtoken": "^9.0.6"
     },
     "peerDependencies": {
         "typescript": "^5.0.0"
     },
     "dependencies": {
+        "@monorepo/db": "workspace:^",
         "@trpc/server": "^10.45.2",
-        "@monorepo/db": "workspace:^"
+        "jsonwebtoken": "^9.0.2"
     }
 }
