@@ -1,36 +1,37 @@
 {
-  "name": "monorepo",
-  "module": "index.ts",
-  "type": "module",
-  "scripts": {
-    "format": "prettier  '{apps,libs}/**/*.{ts,tsx,js,json}' --ignore-path .gitignore",
-    "format:check": "bun format --check",
-    "format:write": "bun format --write",
-    "build": "bun nx run-many -t build",
-    "lint": "bun nx run-many -t lint",
-    "validate": "bun run format:write && bun run lint && bun run build",
-    "prepare": "husky"
-  },
-  "devDependencies": {
-    "@nx/eslint": "19.5.3",
-    "@nx/next": "19.5.3",
-    "@types/bun": "latest",
-    "eslint": "~8.57.0",
-    "husky": "^9.1.2",
-    "lint-staged": "^15.2.7",
-    "nx": "19.5.3",
-    "prettier": "^3.3.3"
-  },
-  "peerDependencies": {
-    "typescript": "^5.0.0"
-  },
-  "dependencies": {
-    "next": "14.2.3",
-    "react": "18.3.1",
-    "react-dom": "18.3.1"
-  },
-  "workspaces": [
-    "apps/*",
-    "libs/*"
-  ]
+    "name": "monorepo",
+    "module": "index.ts",
+    "type": "module",
+    "private": true,
+    "scripts": {
+        "format": "prettier  '{apps,libs}/**/*.{ts,tsx,js,json}' --ignore-path .gitignore",
+        "format:check": "bun format --check",
+        "format:write": "bun format --write",
+        "build": "bun nx run-many -t build",
+        "lint": "bun nx run-many -t lint",
+        "validate": "bun run format:write && bun run lint && bun run build && cd libs/db/;bun run prisma generate",
+        "prepare": "husky"
+    },
+    "devDependencies": {
+        "@nx/eslint": "19.5.3",
+        "@nx/next": "19.5.3",
+        "@types/bun": "latest",
+        "eslint": "~8.57.0",
+        "husky": "^9.1.2",
+        "lint-staged": "^15.2.7",
+        "nx": "19.5.3",
+        "prettier": "^3.3.3"
+    },
+    "peerDependencies": {
+        "typescript": "^5.0.0"
+    },
+    "dependencies": {
+        "next": "14.2.3",
+        "react": "18.3.1",
+        "react-dom": "18.3.1"
+    },
+    "workspaces": [
+        "apps/*",
+        "libs/*"
+    ]
 }
